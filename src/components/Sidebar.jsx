@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { categories } from "../utils/constants";
 
 const Sidebar = ({ selected, setCategory }) => (
@@ -18,16 +18,14 @@ const Sidebar = ({ selected, setCategory }) => (
 
                 <span style={{
                     color: category.name === selected ? 'white' : 'red',
-                    marginRight: 15,
-                }}>
-                    {category.icon}
-                </span>
+                    marginRight: "9px",
+                    fontSize: '9px'
+                }}> {category.icon}</span>
 
-                <span style={{
-                    opacity: category.name === selected ? '1' : '0.85',
-                }}>
-                    {category.name}
-                </span>
+                <Typography variant="body2" sx={{
+                    opacity: category.name === selected ? '1' : '0.85'
+                }}> {category.name}</Typography>
+
             </button>
         ))}
 

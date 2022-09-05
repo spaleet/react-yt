@@ -59,8 +59,8 @@ a {
   background: transparent;
   outline: none;
   border: none;
-
   padding: 7px 15px;
+  padding-left: 12px;
   margin: 10px 0px;
   border-radius: 20px;
   transition: all 0.3s ease;
@@ -69,6 +69,8 @@ a {
 @media screen and (max-width: 900px) {
   .category-btn{
     margin: 10px;
+    height: 40px;
+    padding-right: 17px;
   }
 }
 
