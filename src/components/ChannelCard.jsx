@@ -5,7 +5,7 @@ import { CheckCircle } from "@mui/icons-material"
 const ChannelCard = ({ channel, marginTop }) => {
 
   const pfpUrl = channel?.snippet?.thumbnails?.high?.url;
-
+  console.log("pfpUrl", pfpUrl);
   return (
     <Box sx={{
       display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -13,7 +13,7 @@ const ChannelCard = ({ channel, marginTop }) => {
       width: { md: '320px', xs: '365px' }, margin: 'auto', marginTop
     }}>
 
-      <Link tp={`/channel/${channel?.id?.channelId}`}>
+      <Link to={`/channel/${channel?.id?.channelId}`}>
 
         <CardContent
           sx={{
@@ -21,8 +21,10 @@ const ChannelCard = ({ channel, marginTop }) => {
             justifyContent: 'center', textAlign: 'center'
           }}>
 
-          <CardMedia image={pfpUrl} alt={channel?.snippet?.title}
-            sx={{ borderRadius: '50%', height: '180px', width: '180px', mb: 2, border: '1px solid #e3e3e3' }} />
+          <CardMedia component="img" image={pfpUrl}
+            alt={channel?.snippet?.title}
+            sx={{ borderRadius: '50%', height: '180px', width: '180px', mb: 2, border: '1px solid #e3e3e3' }}
+          />
 
           <Typography variant="h6">
             {channel?.snippet?.title}
