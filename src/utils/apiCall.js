@@ -17,3 +17,15 @@ export const fetchVideos = async (url) => {
 
     return data;
 }
+
+export const fetchChannel = async (id) => {
+    const { data } = await axios.get(`${BASE_URL}/channels?part=snippet&id=${id}`, options)
+
+    return data;
+}
+
+export const fetchChannelVideos = async (id) => {
+    const { data } = await axios.get(`${BASE_URL}/search?channelId=${id}&part=snippet%2Cid&order=date`, options)
+
+    return data;
+}
