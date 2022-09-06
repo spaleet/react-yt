@@ -40,4 +40,3 @@ export const demoDetails = {
   channelTitle: 'My Channel',
   videoTitle: 'Video Title'
 }
-export const demoProfilePicture = 'http://dergipark.org.tr/assets/app/images/buddy_sample.png'
