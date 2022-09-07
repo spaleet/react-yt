@@ -6,9 +6,8 @@ const Videos = ({ videos }) => {
     
 
     return (
-        <Stack 
-            direction="row" flexWrap="wrap" justifyContent="center" 
-            gap={2} sx={{ margin: {md: "0px 16px", sm: 0} }}>
+        <Stack direction="row" flexWrap="wrap" justifyContent="center" 
+            gap={2} sx={{ margin: {xl: "0px 16px", sm: 0} }}>
 
             {videos.map((item, index) => (
                 <Box key={index}>

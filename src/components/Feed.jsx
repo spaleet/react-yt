@@ -5,7 +5,7 @@ import { fetchVideos } from "../utils/apiCall";
 
 const Feed = () => {
 
-  const [selectedCategory, setSelectedCategory] = useState("coding");
+  const [selectedCategory, setSelectedCategory] = useState("js mastery");
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
@@ -25,10 +25,6 @@ const Feed = () => {
         px: { md: 2, sx: 0 } }}>
 
         <Sidebar selected={selectedCategory} setCategory={setSelectedCategory} />
-
-        <Typography variant="body2" sx={{ mt: 1.5, color: "#fff" }} className="copyrights">
-          Copyright 2022
-        </Typography>
 
       </Box>
 
