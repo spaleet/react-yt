@@ -3,10 +3,6 @@ import { Stack } from "@mui/material";
 import { Link } from "react-router-dom";
 import SearchBar from './SearchBar';
 
-const Logo = styled('img')({
-  height: '26px', width: 'auto'
-})
-
 const Navbar = () => (
   <Stack direction="row" alignItems="center" p={2} sx={{
     position: 'sticky', background: "#212121",
@@ -15,7 +11,7 @@ const Navbar = () => (
   }}>
 
     <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
-      <Logo src="images/logo.png" alt="logo" />
+      <img src="/images/logo.png" alt="logo" style={{ height: '26px', width: 'auto' }} />
     </Link>
 
     {/* <SearchBar /> */}

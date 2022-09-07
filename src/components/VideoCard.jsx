@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { Typography, Card, CardContent, CardMedia } from "@mui/material"
 import { CheckCircle } from "@mui/icons-material"
 import { demoDetails } from "../utils/constants"
+import { timeAgo } from './../utils/relativeTime';
 
 const VideoCard = ({ video: { id: { videoId }, snippet } }) => {
 
@@ -34,6 +35,10 @@ const VideoCard = ({ video: { id: { videoId }, snippet } }) => {
             <CheckCircle sx={{ fontSize: 12, color: 'gray', ml: '5px' }} />
           </Typography>
         </Link>
+
+        <Typography>
+          {timeAgo(snippet?.publishTime)}
+        </Typography>
 
       </CardContent>
     </Card>
