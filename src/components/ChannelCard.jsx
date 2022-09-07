@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom"
 import { Box, Typography, CardContent, CardMedia } from "@mui/material"
 import { CheckCircle } from "@mui/icons-material"
-import { LazyLoadImage } from "react-lazy-load-image-component";
+
+const dummyPfp = "https://dergipark.org.tr/assets/app/images/buddy_sample.png"
 
 const ChannelCard = ({ channel, marginTop }) => {
 
   const pfpUrl = channel?.snippet?.thumbnails?.high?.url;
 
-  console.log("pfpUrl", pfpUrl);
   return (
     <Box sx={{
       display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -23,14 +23,12 @@ const ChannelCard = ({ channel, marginTop }) => {
             justifyContent: 'center', textAlign: 'center'
           }}>
 
-          {/* <CardMedia component="img" image="https://picsum.photos/400/300"
-            alt={channel?.snippet?.title}
+          <CardMedia
+            image={pfpUrl || dummyPfp}
+            alt={channel?.snippet?.title} component="img"
             sx={{ borderRadius: '50%', height: '180px', width: '180px', mb: 2, border: '1px solid #e3e3e3' }}
-          /> */}
-          <LazyLoadImage src={pfpUrl}
-            width="180" height="180"
-            alt={channel?.snippet?.title}
           />
+          
           <Typography variant="h6">
             {channel?.snippet?.title}
             <CheckCircle sx={{ fontSize: 14, color: 'gray', ml: '5px' }} />

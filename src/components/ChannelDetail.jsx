@@ -21,8 +21,8 @@ const ChannelDetail = () => {
 
       <Box>
         <div style={{
-          height: '300px',
-          background: 'linear-gradient(90deg, rgba(0,238,247,1) 0%, rgba(206,3,184,1) 100%, rgba(0,212,255,1) 100%)',
+          height: '160px',
+          background: 'linear-gradient(90deg, rgb(0 99 247) 0%, rgb(206 3 125) 100%, rgb(0 154 255) 100%)',
           zIndex: 10,
         }} />
         <ChannelCard channel={channelDetail} marginTop="-110px" />
