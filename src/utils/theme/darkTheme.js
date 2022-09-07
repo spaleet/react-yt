@@ -16,7 +16,7 @@ const darkTheme = createTheme({
                 body2: {
                     fontSize: "14px !important"
                 }
-            }
+            },
         }
     }
 });

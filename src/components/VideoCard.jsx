@@ -13,11 +13,8 @@ const VideoCard = ({ video: { id: { videoId }, snippet } }) => {
     <Card sx={{ width: { md: '320px', xs: '100%' }, boxShadow: 'none', borderRadius: 0 }}>
       <Link to={videoUrl}>
 
-        <CardMedia 
-          component="img" 
-          image={imgUrl} alt={snippet?.title}
-          sx={{ width: 358, height: 180 }}
-        />
+        <CardMedia image={imgUrl} alt={snippet?.title}
+          component="img" sx={{ width: 358, height: 180 }} />
         
       </Link>
 
@@ -25,18 +22,18 @@ const VideoCard = ({ video: { id: { videoId }, snippet } }) => {
 
         <Link to={videoUrl}>
           <Typography variant="subtitle1" fontWeight="bold" color="text.primary">
-            {snippet?.title?.slice(0, 69)}
+            {snippet?.title?.slice(0, 35)}
           </Typography>
         </Link>
 
         <Link to={snippet?.channelId ? `/channel/${snippet?.channelId}` : demoDetails.channelUrl}>
-          <Typography variant="subtitle2" fontWeight="bold">
+          <Typography variant="subtitle2" color="text.secondary">
             {snippet?.channelTitle?.slice(0, 69)}
-            <CheckCircle sx={{ fontSize: 12, color: 'gray', ml: '5px' }} />
+            <CheckCircle sx={{ fontSize: 12, color: 'text.secondary', ml: '5px' }} />
           </Typography>
         </Link>
 
-        <Typography variant="body2">
+        <Typography variant="body2" color="text.secondary">
           {timeAgo(snippet?.publishTime)}
         </Typography>
 

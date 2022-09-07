@@ -6,7 +6,7 @@ import SearchBar from './SearchBar';
 const Navbar = () => (
   <Stack direction="row" alignItems="center" p={2} sx={{
     position: 'sticky', background: "#212121",
-    top: 0, height: '28px',
+    top: 0, height: '3.5rem',
     justifyContent: "space-between"
   }}>
 
