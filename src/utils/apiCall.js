@@ -29,3 +29,15 @@ export const fetchChannelVideos = async (id) => {
 
     return data;
 }
+
+export const fetchVideoDetail = async (id) => {
+    const { data } = await axios.get(`${BASE_URL}/videos?part=snippet,statistics&id=${id}`, options)
+
+    return data.items[0];
+}
+
+export const fetchRelatedVideos = async (id) => {
+    const { data } = await axios.get(`${BASE_URL}/search?part=snippet&relatedToVideoId=${id}&type=video`, options)
+
+    return data.items;
+}

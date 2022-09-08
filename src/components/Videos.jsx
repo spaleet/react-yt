@@ -1,12 +1,10 @@
 import { Stack, Box } from "@mui/material"
 import {VideoCard, ChannelCard } from './_index';
 
-const Videos = ({ videos }) => {
-
-    
+const Videos = ({ videos, direction }) => {
 
     return (
-        <Stack direction="row" flexWrap="wrap" justifyContent="center" 
+        <Stack direction={direction || "row"} flexWrap="wrap" justifyContent="center" 
             gap={2} sx={{ margin: {xl: "0px 16px", sm: 0} }}>
 
             {videos.map((item, index) => (
