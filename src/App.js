@@ -17,7 +17,7 @@ const App = () => (
                 <Route path="/c/:id" element={<ChannelDetail />} />
                 <Route exact path="/channel" element={<Navigate to="/" />} />
 
-                <Route path="/search/:searchTerm" element={<SearchFeed />} />
+                <Route path="/search" element={<SearchFeed />} />
             </Routes>
         </Box>
 
