@@ -6,7 +6,7 @@ body {
 }
 
 * {
-  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 a {
@@ -33,7 +33,7 @@ a {
   color: white !important;
 }
 
-.category-btn:hover span{
+.category-btn:hover span {
   color: white !important;
 }
 
@@ -41,13 +41,14 @@ a {
   height: 77vh !important;
   width: 100% !important;
 }
-.category-btn{
+
+.category-btn {
   font-weight: bold !important;
   text-transform: capitalize;
   display: flex;
   align-items: center;
   justify-content: start;
-  cursor:pointer;
+  cursor: pointer;
   background: transparent;
   outline: none;
   border: none;
@@ -59,16 +60,16 @@ a {
 }
 
 @media screen and (max-width: 900px) {
-  .category-btn{
+  .category-btn {
     margin: 10px;
     height: 40px;
     padding-right: 17px;
   }
 }
 
-@media screen and (max-width:800px){
-  .copyright{
-    display:none !important;
+@media screen and (max-width:800px) {
+  .copyright {
+    display: none !important;
   }
 }
 
@@ -77,7 +78,33 @@ a {
     overflow: auto !important;
   }
 
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
   .react-player {
-    height: 45vh !important;
+    /* height: 233px !important; */
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .react-player {
+    /* height: 233px !important; */
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .react-player {
+    width: 85% !important;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .react-player {
+    height: 77vh !important;
   }
 }
