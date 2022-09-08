@@ -2,8 +2,8 @@ import { useState, useReact } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import { Typography, Box, Stack } from '@mui/material';
-import { CheckCircle } from '@mui/icons-material';
-import { Videos } from './_index';
+import { CheckCircle, ThumbsUpDown } from '@mui/icons-material';
+import { Videos, Loader } from './_index';
 import { useEffect } from 'react';
 import { fetchRelatedVideos, fetchVideoDetail } from '../utils/apiCall';
 
@@ -19,7 +19,7 @@ const VideoDetail = () => {
 
   }, [id])
 
-  if (!videoDetail?.snippet) return "Loading ...";
+  if (!videoDetail?.snippet) return <Loader />;
 
   const { snippet: { title, channelId, channelTitle }, statistics: { viewCount, likeCount } } = videoDetail;
 
@@ -52,7 +52,7 @@ const VideoDetail = () => {
                   {parseInt(likeCount).toLocaleString()} likes
                 </Typography>
               </Stack>
-              
+
             </Stack>
           </Box>
         </Box>

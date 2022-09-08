@@ -1,7 +1,8 @@
 import { Stack, Box } from "@mui/material"
-import {VideoCard, ChannelCard } from './_index';
+import {VideoCard, ChannelCard, Loader } from './_index';
 
 const Videos = ({ videos, direction }) => {
+    if(!videos?.length) return <Loader />;
 
     return (
         <Stack direction={direction || "row"} flexWrap="wrap" justifyContent="center" 
