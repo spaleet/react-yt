@@ -22,7 +22,7 @@ const SearchBar = () => {
             onSubmit={onHandleSubmit}
             sx={{
                 p: '2px 4px', display: { md: 'flex', xs: 'none' }, alignItems: 'center', mr: 5,
-                width: 350, borderRadius: "13px", border: '2px solid #872323'
+                width: 350, borderRadius: "13px", border: '2px solid #872323', height: '46px'
             }}
         >
             <InputBase

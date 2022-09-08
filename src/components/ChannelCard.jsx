@@ -28,7 +28,7 @@ const ChannelCard = ({ channel, marginTop }) => {
           <CardMedia
             image={pfpUrl || dummyPfp}
             alt={channel?.snippet?.title} component="img"
-            sx={{ borderRadius: '50%', height: '180px', width: '180px', mb: 2, border: '1px solid #e3e3e3' }}
+            sx={{ borderRadius: '50%', height: '180px', width: '180px', mb: 2 }}
           />
           
           <Typography variant="h6">

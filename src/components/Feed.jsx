@@ -5,7 +5,7 @@ import { fetchVideos } from "../utils/apiCall";
 
 const Feed = () => {
 
-  const [selectedCategory, setSelectedCategory] = useState("js mastery");
+  const [selectedCategory, setSelectedCategory] = useState("javascript");
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
