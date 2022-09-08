@@ -1,20 +1,37 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { Box } from "@mui/material"
 import { Videos, ChannelCard } from "./_index"
 import { fetchChannel, fetchChannelVideos } from "../utils/apiCall"
 
 const ChannelDetail = () => {
+  const navigate = useNavigate();
 
   const [channelDetail, setChannelDetail] = useState(null);
   const [videos, setVideos] = useState([]);
   const { id } = useParams();
 
-  useEffect(() => {
-    fetchChannel(id).then((data) => setChannelDetail(data?.items[0]))
+  if (!id) {
+    navigate("/");
+  }
 
-    fetchChannelVideos(id).then((data) => setVideos(data?.items))
-  }, [id])
+  useEffect(() => {
+    const fetchResults = async () => {
+      const data = await fetchChannel(id);
+
+      if (!data?.items) {
+        navigate("/");
+      }
+
+      setChannelDetail(data?.items[0]);
+
+      const videosData = await fetchChannelVideos(id);
+
+      setVideos(videosData?.items);
+    };
+
+    fetchResults();
+  }, [id]);
 
   return (
     <Box minHeight="95vh">
@@ -31,7 +48,7 @@ const ChannelDetail = () => {
       <Box p={2} display="flex">
 
         <Box sx={{ mr: { sm: '100px' } }} />
-        
+
         <Videos videos={videos} />
 
       </Box>

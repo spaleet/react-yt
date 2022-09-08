@@ -6,20 +6,22 @@ const dummyPfp = "https://dergipark.org.tr/assets/app/images/buddy_sample.png"
 
 const ChannelCard = ({ channel, marginTop }) => {
 
+  const channelId = !channel?.id?.channelId ? channel?.id : channel?.id?.channelId;
   const pfpUrl = channel?.snippet?.thumbnails?.high?.url;
+  const subscriberCount = parseInt(channel?.statistics?.subscriberCount).toLocaleString();
 
   return (
     <Box sx={{
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       boxShadow: 'none', borderRadius: '20px', height: '326px',
-      width: { md: '320px', xs: '365px' }, margin: 'auto', marginTop
+      width: { xl: "320px", md: '240px', sm: '100%', xs: '100%',  }, margin: 'auto', marginTop
     }}>
 
-      <Link to={`/channel/${channel?.id?.channelId}`}>
+      <Link to={`/channel/${channelId}`}>
 
         <CardContent
           sx={{
-            color: "#fff", display: 'flex', flexDirection: 'column',
+            color: "text.primary", display: 'flex', flexDirection: 'column',
             justifyContent: 'center', textAlign: 'center'
           }}>
 
@@ -31,13 +33,13 @@ const ChannelCard = ({ channel, marginTop }) => {
           
           <Typography variant="h6">
             {channel?.snippet?.title}
-            <CheckCircle sx={{ fontSize: 14, color: 'gray', ml: '5px' }} />
+            <CheckCircle sx={{ fontSize: 14, ml: '5px' }}/>
 
           </Typography>
 
           {channel?.statistics?.subscriberCount && (
-            <Typography>
-              {parseInt(channel?.statistics?.subscriberCount).toLocaleString()} Subscribers!
+            <Typography color="text.secondary">
+              {subscriberCount} Subscribers!
             </Typography>
           )}
 

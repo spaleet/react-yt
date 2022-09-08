@@ -12,7 +12,11 @@ const VideoCard = ({ video: { id: { videoId }, snippet } }) => {
   const videoTitle = snippet?.title?.length > 32 ? `${snippet?.title?.slice(0, 32)} ...` : snippet?.title;
 
   return (
-    <Card sx={{ width: { xl: "320px", md: '240px', sm: '100%', xs: '100%',  }, boxShadow: 'none', borderRadius: 0 }}>
+    <Card sx={{ 
+        width: { xl: "320px", md: '240px', sm: '100%', xs: '100%'  }, 
+        boxShadow: 'none', borderRadius: 0 
+      }}>
+
       <Link to={videoUrl}>
 
         <CardMedia image={imgUrl} alt={snippet?.title}
