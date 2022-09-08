@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import { Stack } from "@mui/material";
 import { Link } from "react-router-dom";
 import SearchBar from './SearchBar';
@@ -14,7 +13,7 @@ const Navbar = () => (
       <img src="/images/logo.png" alt="logo" style={{ height: '26px', width: 'auto' }} />
     </Link>
 
-    {/* <SearchBar /> */}
+    <SearchBar />
 
   </Stack>
 )
