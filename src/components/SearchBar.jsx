@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { Paper, IconButton, TextField } from '@mui/material';
+import { Paper, IconButton, TextField, InputBase } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 const SearchBar = () => {
@@ -21,24 +21,20 @@ const SearchBar = () => {
             component='form'
             onSubmit={onHandleSubmit}
             sx={{
-                borderRadius: 20,
-                border: '1px solid #e3e3e3',
-                pl: 2,
-                boxShadow: 'none',
-                mr: { sm: 5 },
-                display: { md: 'flex', xs: 'none' }
+                p: '2px 4px', display: { md: 'flex', xs: 'none' }, alignItems: 'center', mr: 5,
+                width: 350, borderRadius: "13px", border: '2px solid #872323'
             }}
         >
-            <TextField
+            <InputBase
                 onInput={(e) => {
                     setSearchTerm(e.target.value);
                 }}
-                variant="outlined"
-                placeholder="Search..."
-                size="small"
-                sx={{ border: 'none', width: { md: '320px' } }}
+                sx={{ ml: 1, flex: 1 }}
+                placeholder="Search ...."
+                value={searchTerm}
+
             />
-            <IconButton type='submit' sx={{ p: '10px', color: 'red' }} aria-label='search'>
+            <IconButton type='submit' sx={{ p: '10px', color: 'red' }}>
                 <SearchIcon />
             </IconButton>
 
