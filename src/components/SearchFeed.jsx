@@ -14,7 +14,7 @@ const SearchFeed = () => {
   }
 
   useEffect(() => {
-    fetchVideos(`search?part=snippet&q=${searchParams.get("q")}`)
+    fetchVideos(searchParams.get("q"))
       .then((data) => {
         setVideos(data.items)
       })

@@ -9,7 +9,7 @@ const Feed = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    fetchVideos(`search?part=snippet&q=${selectedCategory}`)
+    fetchVideos(selectedCategory)
       .then((data) => {
         setVideos(data.items)
       })

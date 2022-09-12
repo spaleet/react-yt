@@ -12,8 +12,8 @@ const options = {
     }
 };
 
-export const fetchVideos = async (url) => {
-    const { data } = await axios.get(`${BASE_URL}/${url}`, options)
+export const fetchVideos = async (phrase) => {
+    const { data } = await axios.get(`${BASE_URL}/search?part=snippet&q=${phrase}`, options)
 
     return data;
 }
